@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExperimentRegions>
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421199)" Height="10" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="1" Key="ca5dedf7-e28c-4a7c-ac9f-6e8829b80bda" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="10" X="0" Y="0">
+      <GraphicProperties Id="156">
+         <Attributes>
+            <Foreground>#FFFF0000</Foreground>
+            <FontSize>20</FontSize>
+            <Stroke>#FFFF0000</Stroke>
+            <IsAnalysisEnabled>true</IsAnalysisEnabled>
+            <IsDisplayIdVisible>true</IsDisplayIdVisible>
+         </Attributes>
+         <Geometry>
+            <Points>1,1 -1,1 -1,-1 -1,-1</Points>
+         </Geometry>
+         <AnimationType>None</AnimationType>
+      </GraphicProperties>
+   </RegionItem>
+</ExperimentRegions>

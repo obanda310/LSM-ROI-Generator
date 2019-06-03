@@ -171,13 +171,44 @@ end
 %Define path and file name for .rls file
 filnm2=strcat(TarDir,'\',outputName,'.Regions');
 filnm3=strcat(TarDir,'\',outputName,'.ovl');
+filnm4=strcat(TarDir,'\',outputName,'.czexr');
 
 %Pass the coordinates for the vertices of each ROI to the subroutine
 %Poly2Regions or Poly2Overlay which will write the information about the
 %list of ROIs to a file written in a format that is readable by Zeiss AIM
 %or Zen software
+polygons4 = polygons2;
+%% Update 05/2019. Adding support for newer Zen versions (Blue/Black combo)
+for i = 1:size(polygons4,1)
+    polygons4{i,1} = polygons4{i,1}*1000000;
+    poly4.MaxX(i,1) = max(polygons4{i,1}(:,1));
+    poly4.MinX(i,1) = min(polygons4{i,1}(:,1));
+    poly4.Width(i,1) = poly4.MaxX(i,1)-poly4.MinX(i,1);   
+    
+    poly4.MaxY(i,1) = max(polygons4{i,1}(:,2));
+    poly4.MinY(i,1) = min(polygons4{i,1}(:,2));        
+    poly4.Height(i,1) = poly4.MaxY(i,1)-poly4.MinY(i,1);
+    
+    %Zero all vertices to (MinX,MinY), and normalize to Width/Height
+    polygons4{i,1}(:,1) = (polygons4{i,1}(:,1) - poly4.MinX(i,1));             
+    polygons4{i,1}(:,2) = (polygons4{i,1}(:,2) - poly4.MinY(i,1));                     
+end
+%% Update 05/2019. Testing support for newer Zen versions (Blue/Black combo)
+%Draw regions to verify accuracy
+figure
+hold on
+for i = 1:size(polygons4,1)
+    if i == 1
+    plot((polygons4{i,1}(:,1))+poly4.MinX(i,1),(polygons4{i,1}(:,2))*-1-poly4.MinY(i,1))
+    else
+        plot((polygons4{i,1}(:,1))+poly4.MinX(i-1,1),(polygons4{i,1}(:,2))*-1-poly4.MinY(i,1))
+    end
+end
+
+%%
 Poly2Regions(filnm2,polygons2);
 Poly2OVL(filnm3,polygons2);
+Poly2XML(filnm4,polygons4,poly4); % Update 05/2019. Adding support for newer Zen versions (Blue/Black combo)
 
 %%
 disp(['Regions file #' num2str(options(8,1)) ' has ',num2str(size(polygons,1)),' Regions and took ' num2str(toc) ' seconds!'])
