@@ -196,12 +196,13 @@ for i = 1:size(polygons4,1)
     polygons4{i,1}(:,2) = (polygons4{i,1}(:,2) - poly4.MinY(i,1));                     
 end
 %% Update 05/2019. Testing support for newer Zen versions (Blue/Black combo)
-%Draw regions to verify accuracy
-figure
-hold on
-for i = 1:size(polygons4,1)
-    plot((polygons4{i,1}(:,1)) + poly4.MinX(i,1) - poly4.Width(i,1)/2,(polygons4{i,1}(:,2))*-1-poly4.MinY(i,1)+ poly4.Height(i,1)/2)
-end
+%Draw regions to verify accuracy. Diagnostic.
+
+% figure
+% hold on
+% for i = 1:size(polygons4,1)
+%     plot((polygons4{i,1}(:,1)) + poly4.MinX(i,1) - poly4.Width(i,1)/2,(polygons4{i,1}(:,2))*-1-poly4.MinY(i,1)+ poly4.Height(i,1)/2)
+% end
 
 %%
 Poly2Regions(filnm2,polygons2);
