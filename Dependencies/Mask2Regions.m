@@ -183,11 +183,13 @@ for i = 1:size(polygons4,1)
     polygons4{i,1} = polygons4{i,1}*1000000;
     poly4.MaxX(i,1) = max(polygons4{i,1}(:,1));
     poly4.MinX(i,1) = min(polygons4{i,1}(:,1));
-    poly4.Width(i,1) = poly4.MaxX(i,1)-poly4.MinX(i,1);   
+    poly4.Width(i,1) = poly4.MaxX(i,1)-poly4.MinX(i,1); 
+    poly4.Cen(i,1) = poly4.MinX(i,1) + (poly4.Width(i,1)/2);
     
     poly4.MaxY(i,1) = max(polygons4{i,1}(:,2));
     poly4.MinY(i,1) = min(polygons4{i,1}(:,2));        
     poly4.Height(i,1) = poly4.MaxY(i,1)-poly4.MinY(i,1);
+    poly4.Cen(i,2) = poly4.MinY(i,1) + (poly4.Height(i,1)/2);
     
     %Zero all vertices to (MinX,MinY), and normalize to Width/Height
     polygons4{i,1}(:,1) = (polygons4{i,1}(:,1) - poly4.MinX(i,1));             
@@ -198,11 +200,7 @@ end
 figure
 hold on
 for i = 1:size(polygons4,1)
-    if i == 1
-    plot((polygons4{i,1}(:,1))+poly4.MinX(i,1),(polygons4{i,1}(:,2))*-1-poly4.MinY(i,1))
-    else
-        plot((polygons4{i,1}(:,1))+poly4.MinX(i-1,1),(polygons4{i,1}(:,2))*-1-poly4.MinY(i,1))
-    end
+    plot((polygons4{i,1}(:,1)) + poly4.MinX(i,1) - poly4.Width(i,1)/2,(polygons4{i,1}(:,2))*-1-poly4.MinY(i,1)+ poly4.Height(i,1)/2)
 end
 
 %%

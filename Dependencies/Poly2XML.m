@@ -49,9 +49,9 @@ for i = 1:size(polyVerts,1)
     fwrite(fid,Rtext(286:353,1),'uint8');
     fwrite(fid,num2str(polyStats.Width(i)),'uint8');
     fwrite(fid,Rtext(356:360,1),'uint8');
-    fwrite(fid,num2str(polyStats.MinX(i,1)),'uint8');
+    fwrite(fid,num2str(polyStats.Cen(i,1)),'uint8');
     fwrite(fid,Rtext(362:366,1),'uint8');
-    fwrite(fid,num2str(polyStats.MinY(i,1)),'uint8');
+    fwrite(fid,num2str(polyStats.Cen(i,2)),'uint8');
     fwrite(fid,Rtext(368:400,1),'uint8');
     fwrite(fid,num2str(GPID),'uint8');
     GPID = GPID + 1;
