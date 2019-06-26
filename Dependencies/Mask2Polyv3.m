@@ -31,34 +31,91 @@ end
 %% Open closed regions
 % This is difficult to code well...could use some work.
 
-%% Divide the image to break open large closed spaces
+%% WIP Update Image Segmentation to use overlapping regions.
+% This should remedy empty spaces existing between regions in the final
+% regions files due to discontinuities in the division breaks.
 
 div = 10;
 IMsize = ysize;
 IMdiv = round(IMsize/div);
-DivMask= ones(ysize,xsize);
+DivMask1= ones(ysize,xsize);
+DivMask2= ones(ysize,xsize);
 
 Dz= zeros(ysize,xsize);
 D = Dz;
 % The image 'D' will contain only the edges created by dividing the raw
 % image (used in v2)
 if options(4,1) == 1
-for i =1:div-1
-    DivMask(IMdiv*i,:) = 0;
-    %A(:,IMdiv*i) = 0;
-    D(IMdiv*i-1,:) = 1;
-    D(IMdiv*i+1,:) = 1;    
-end
+    
+    for i =1:2:div
+        if i == div
+        DivMask1(IMdiv*(i-1):IMsize,:) = 0;
+        elseif i == 1
+        DivMask1(1:IMdiv*i,:) = 0;
+        else
+        DivMask1(IMdiv*(i-1):IMdiv*i,:) = 0;
+        D(IMdiv*i+1,:) = 1;
+        D(IMdiv*i+3,:) = 1;
+        end
+    end
+    
+    for i =2:2:div
+        if i == div
+            DivMask2(IMdiv*(i-1)+round(IMdiv/4):IMsize,:) = 0;
+        else
+        DivMask2(IMdiv*(i-1)+round(IMdiv/8):IMdiv*i-round(IMdiv/8),:) = 0;
+        %A(:,IMdiv*i) = 0;
+        D(IMdiv*i+1,:) = 1;
+        D(IMdiv*i+3,:) = 1;
+        end
+    end
+    DivMaskFinal = DivMask1.*DivMask2;
+else
+    DivMaskFinal = DivMask1;
 end
 
-%% Identify features that do not need to be broken up.
-smallraw = xor(bwareaopen(raw,round((xsize/13)^2),4),raw);
-DivMask2 = smallraw | DivMask;
+% Diagnostic Images to view Division Masks
+% figure
+% imshow(DivMask1,[])
+% figure
+% imshow(DivMask2,[])
+
+%% Divide the image to break open large closed spaces (old Version)
+
+% div = 10;
+% IMsize = ysize;
+% IMdiv = round(IMsize/div);
+% DivMask= ones(ysize,xsize);
+% 
+% Dz= zeros(ysize,xsize);
+% D = Dz;
+% % The image 'D' will contain only the edges created by dividing the raw
+% % image (used in v2)
+% if options(4,1) == 1
+% for i =1:div-1
+%     DivMask(IMdiv*i,:) = 0;
+%     %A(:,IMdiv*i) = 0;
+%     D(IMdiv*i-1,:) = 1;
+%     D(IMdiv*i+1,:) = 1;    
+% end
+% end
+
+%% Identify features that do not need to be broken up. (needs update)
+% smallraw = xor(bwareaopen(raw,round((xsize/13)^2),4),raw);
+% DivMask = smallraw | DivMaskFinal;
 
 %% Update 'raw'
-IM2 = (raw.*DivMask2); %Update 'raw' image by convolution with DivMask
+if options(4,1) == 1
+IM2a = (raw.*DivMask1);
+IM2b = (raw.*DivMask2);
+polya = bwboundaries(IM2a,8);
+polyb = bwboundaries(IM2b,8);
+%Update 'raw' image by convolution with DivMask
+poly1 = cat(1,polya,polyb);
+else
+IM2 = (raw); 
 poly1 = bwboundaries(IM2,8); %Find boundaries to start building polygons
-
+end
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%VERSION 2 Start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Version 2 used a method where the user had the option to scale down the
 % image to generate a simplified mask and therefore simpler regions. It may

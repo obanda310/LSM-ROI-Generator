@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ExperimentRegions>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421199)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="1" Key="ca5dedf7-e28c-4a7c-ac9f-100000000000" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="27.3876" X="-145.5454" Y="-15.7152">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421199)" Height="29.8038" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="1" Key="ca5dedf7-e28c-4a7c-ac9f-100000000000" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="33.7285" X="-123.5691" Y="-44.8283">
       <GraphicProperties Id="10000">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -10,12 +10,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,9.7813 0.26083,9.5204 2.6083,6.6513 5.2167,5.0863 6.3904,4.695 6.9121,4.5646 7.3034,4.4342 7.5642,3.9125 9.7813,0.13042 9.7813,0 26.4747,0 26.3442,0.26083 19.3017,11.6071 19.5626,12.6504 19.693,13.433 19.5626,16.3021 19.4321,17.0846 19.3017,17.6063 19.1713,17.9975 19.3017,18.128 27.3876,31.6913 11.2159,31.5609 11.0854,31.3001 7.3034,25.0401 6.6513,24.9096 6.1296,24.7792 5.7383,24.6488 3.5213,23.6055 1.0433,21.3884 0,19.8234 0,9.7813 0,9.7813</Points>
+            <Points>0,29.8038 0.12265,29.6811 17.1709,0.12265 17.1709,0 33.7285,0 33.4832,0.4906 15.6991,29.8038 0,29.8038 0,29.8038</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421200)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="2" Key="ca5dedf7-e28c-4a7c-ac9f-100000000001" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="35.8647" X="-131.3951" Y="-47.6674">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421200)" Height="29.8038" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="2" Key="ca5dedf7-e28c-4a7c-ac9f-100000000001" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="32.87" X="-122.5266" Y="15.2698">
       <GraphicProperties Id="10001">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -25,12 +25,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,31.6913 0.13042,31.5609 18.2584,0.13042 18.2584,0 35.8647,0 35.6038,0.52167 16.6934,31.6913 0,31.6913 0,31.6913</Points>
+            <Points>0,0 15.2085,0.12265 15.4538,0.61325 32.87,29.6811 32.87,29.8038 17.6615,29.6811 17.4162,29.1905 0,0 0,0</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421201)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="3" Key="ca5dedf7-e28c-4a7c-ac9f-100000000002" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="34.9518" X="-130.2866" Y="16.2369">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421201)" Height="9.3213" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="3" Key="ca5dedf7-e28c-4a7c-ac9f-100000000002" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="26.1243" X="-91.435" Y="-94.6852">
       <GraphicProperties Id="10002">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -40,12 +40,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,0 16.1717,0.13042 16.4325,0.65209 34.9518,31.5609 34.9518,31.6913 18.78,31.5609 18.5192,31.0392 0,0 0,0</Points>
+            <Points>0,9.1987 0.2453,8.9534 5.0286,1.5944 7.1137,0.36795 7.4816,0.2453 7.9722,0.12265 8.8307,0 10.0572,0.12265 10.7931,0.2453 11.2837,0.36795 11.6517,0.4906 12.5102,0.85854 26.1243,9.3213 0,9.3213 0,9.1987 0,9.1987</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421202)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="4" Key="ca5dedf7-e28c-4a7c-ac9f-100000000003" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="167.9771" X="-46.9501" Y="-79.6196">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421202)" Height="19.6239" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="4" Key="ca5dedf7-e28c-4a7c-ac9f-100000000003" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="53.4751" X="-76.2878" Y="70.278">
       <GraphicProperties Id="10003">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -55,12 +55,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,31.6913 0.26083,31.4305 19.693,0 48.2543,0.13042 48.3847,0.26083 92.3352,27.6484 92.5961,27.518 140.3287,0 167.9771,0 167.8467,0 167.5859,0.26083 112.9411,31.6913 72.6423,31.5609 72.5119,31.4305 32.213,6.3904 31.9522,6.6513 17.6063,31.6913 0,31.6913 0,31.6913</Points>
+            <Points>0,0 15.0859,0 15.3312,0.4906 17.7841,4.538 17.9068,4.4154 26.0016,0 53.4751,0 53.3524,0 53.2298,0.12265 18.2747,19.0106 17.9068,19.1333 17.6615,19.2559 16.9256,19.5012 16.3123,19.6239 14.35,19.5012 13.7367,19.3786 13.2461,19.2559 12.8782,19.1333 11.897,18.6427 10.3025,17.2935 0,0.12265 0,0 0,0</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421203)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="5" Key="ca5dedf7-e28c-4a7c-ac9f-100000000004" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="34.9518" X="-111.2457" Y="48.1891">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421203)" Height="29.8038" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="5" Key="ca5dedf7-e28c-4a7c-ac9f-100000000004" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="36.9174" X="-35.7522" Y="-44.8283">
       <GraphicProperties Id="10004">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -70,12 +70,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,0 16.1717,0.13042 16.3021,0.26083 34.9518,31.5609 34.9518,31.6913 18.9105,31.6913 18.6496,31.1697 0,0 0,0</Points>
+            <Points>0,0 36.9174,0 36.7948,0 36.6721,0.12265 25.3884,6.6231 25.511,6.991 31.5209,29.6811 31.5209,29.8038 18.0294,29.6811 17.5388,27.7187 12.2649,7.8496 12.1423,7.6043 11.897,7.359 0,0 0,0</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421204)" Height="9.9117" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="6" Key="ca5dedf7-e28c-4a7c-ac9f-100000000005" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="27.7788" X="-97.2259" Y="-100.6819">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421204)" Height="29.8038" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="6" Key="ca5dedf7-e28c-4a7c-ac9f-100000000005" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="37.0401" X="-9.5666" Y="15.2698">
       <GraphicProperties Id="10005">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -85,12 +85,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,9.7813 0.26083,9.5204 5.3471,1.6954 7.5642,0.39125 7.9554,0.26083 8.4771,0.13042 9.39,0 10.6942,0.13042 11.4767,0.26083 11.9984,0.39125 12.3896,0.52167 13.3025,0.91292 27.7788,9.9117 0,9.9117 0,9.7813 0,9.7813</Points>
+            <Points>0,0 13.4914,0.12265 13.6141,0.61325 20.6051,26.9828 20.7277,27.1055 21.2183,27.2281 21.9542,27.3508 36.4268,29.8038 37.0401,29.8038 36.9174,29.8038 7.2363,29.8038 7.359,29.8038 7.4816,29.6811 7.7269,29.5585 7.8496,29.4358 7.7269,29.1905 7.6043,28.6999 0,0 0,0</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421205)" Height="20.8667" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="7" Key="ca5dedf7-e28c-4a7c-ac9f-100000000006" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="56.8618" X="-81.1194" Y="74.7289">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421205)" Height="29.8038" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="7" Key="ca5dedf7-e28c-4a7c-ac9f-100000000006" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="100.2044" X="59.3009" Y="-104.9264">
       <GraphicProperties Id="10006">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -100,12 +100,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,0 16.0413,0 16.3021,0.52167 18.9105,4.8254 19.0409,4.695 27.6484,0 56.8618,0 56.7314,0 56.601,0.13042 19.4321,20.2146 19.0409,20.3451 18.78,20.4755 17.9975,20.7363 17.3455,20.8667 15.2588,20.7363 14.6067,20.6059 14.085,20.4755 13.6938,20.3451 12.6504,19.8234 10.955,18.3888 0,0.13042 0,0 0,0</Points>
+            <Points>0,29.8038 0.7359,29.4358 51.758,0 84.9959,0.12265 85.2412,0.61325 100.2044,29.6811 100.2044,29.8038 85.6092,29.8038 83.4015,25.3884 71.9951,3.3115 71.8724,3.4342 26.1243,29.8038 0,29.8038 0,29.8038</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421206)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="8" Key="ca5dedf7-e28c-4a7c-ac9f-100000000007" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="177.3671" X="7.3034" Y="48.1891">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421206)" Height="29.8038" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="8" Key="ca5dedf7-e28c-4a7c-ac9f-100000000007" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="68.8062" X="97.6901" Y="15.2698">
       <GraphicProperties Id="10007">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -115,12 +115,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,31.6913 1.0433,31.1697 58.6877,0 92.5961,0.13042 104.3336,2.0867 137.5899,7.6946 138.3724,7.5642 138.5029,7.4338 148.2841,0 177.3671,0 177.2367,0 176.9759,0.26083 142.4154,21.5188 142.0241,21.6492 141.5025,21.7796 140.72,21.9101 139.1549,21.7796 138.242,21.6492 134.3295,20.9971 69.2514,10.0421 67.9473,10.6942 29.083,31.6913 0,31.6913 0,31.6913</Points>
+            <Points>0,29.8038 0.2453,29.5585 41.2101,0 68.8062,0 68.6836,0 68.3156,0.36795 27.3508,29.8038 0,29.8038 0,29.8038</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421207)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="9" Key="ca5dedf7-e28c-4a7c-ac9f-100000000008" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="39.2555" X="-38.0166" Y="-47.6674">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421207)" Height="29.8038" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="9" Key="ca5dedf7-e28c-4a7c-ac9f-100000000008" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="29.9264" X="125.3475" Y="-44.8283">
       <GraphicProperties Id="10008">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -130,12 +130,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,0 39.2555,0 39.1251,0 38.9947,0.13042 26.9963,7.0425 27.1267,7.4338 33.5172,31.5609 33.5172,31.6913 19.1713,31.5609 18.6496,29.4742 13.0417,8.3467 12.9113,8.0859 12.6504,7.825 0,0 0,0</Points>
+            <Points>0,0 14.7179,0.12265 16.6803,4.0474 29.9264,29.8038 15.3312,29.8038 14.8406,28.8226 0,0 0,0</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421208)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="10" Key="ca5dedf7-e28c-4a7c-ac9f-100000000009" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="22.6926" X="-26.9963" Y="-15.7152">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421208)" Height="37.408" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="10" Key="ca5dedf7-e28c-4a7c-ac9f-100000000009" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="27.964" X="-135.7727" Y="-14.7792">
       <GraphicProperties Id="10009">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -145,12 +145,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,0 14.3459,0.13042 14.4763,0.52167 22.6926,31.5609 22.6926,31.6913 8.3467,31.5609 7.9554,29.9959 0,0 0,0</Points>
+            <Points>0,13.0008 0.2453,12.7555 2.453,10.0572 4.906,8.5854 6.0098,8.2175 6.5004,8.0948 6.8684,7.9722 7.1137,7.4816 11.4064,0 27.2281,0 26.9828,0.4906 18.1521,14.7179 18.3974,15.6991 18.52,16.435 18.3974,19.1333 18.2747,19.8692 18.1521,20.3598 18.0294,20.7277 18.1521,20.8504 27.964,37.2854 27.964,37.408 12.8782,37.408 12.7555,37.1627 6.8684,27.3508 6.2551,27.2281 5.7645,27.1055 5.3966,26.9828 3.3115,26.0016 0.98119,23.9166 0,22.4448 0,13.0008 0,13.0008</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421209)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="11" Key="ca5dedf7-e28c-4a7c-ac9f-100000000010" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="39.3859" X="-10.1725" Y="16.2369">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421209)" Height="37.408" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="11" Key="ca5dedf7-e28c-4a7c-ac9f-100000000010" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="166.8029" X="-41.946" Y="-74.8774">
       <GraphicProperties Id="10010">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -160,12 +160,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,0 14.3459,0.13042 14.4763,0.65209 21.9101,28.6917 22.0405,28.8222 22.5621,28.9526 23.3446,29.083 38.7339,31.6913 39.3859,31.6913 39.2555,31.6913 7.6946,31.6913 7.825,31.6913 7.9554,31.5609 8.2163,31.4305 8.3467,31.3001 8.2163,31.0392 8.0859,30.5176 0,0 0,0</Points>
+            <Points>0,37.2854 0.2453,37.0401 23.0581,0 41.4554,0.12265 41.5781,0.2453 89.0433,29.8038 89.2886,29.6811 140.8013,0 166.8029,0 166.6803,0 166.435,0.2453 101.9215,37.408 76.6558,37.2854 76.5331,37.1627 32.502,9.8119 32.2567,10.0572 16.6803,37.2854 16.6803,37.408 0,37.408 0,37.2854 0,37.2854</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421210)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="12" Key="ca5dedf7-e28c-4a7c-ac9f-100000000011" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="106.5507" X="63.0566" Y="-111.5717">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421210)" Height="37.408" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="12" Key="ca5dedf7-e28c-4a7c-ac9f-100000000011" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="37.408" X="-104.5585" Y="45.3189">
       <GraphicProperties Id="10011">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -175,12 +175,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,31.6913 0.7825,31.3001 55.036,0 90.379,0.13042 90.6398,0.65209 106.5507,31.5609 106.5507,31.6913 91.0311,31.6913 88.6836,26.9963 76.5548,3.5213 76.4244,3.6517 27.7788,31.6913 0,31.6913 0,31.6913</Points>
+            <Points>0,0 15.0859,0 15.2085,0.2453 37.408,37.408 22.1995,37.2854 21.9542,36.7948 0,0.12265 0,0 0,0</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421211)" Height="12.6504" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="13" Key="ca5dedf7-e28c-4a7c-ac9f-100000000012" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="34.5605" X="82.6192" Y="-134.0035">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421211)" Height="37.408" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="13" Key="ca5dedf7-e28c-4a7c-ac9f-100000000012" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="179.9264" X="6.4391" Y="45.3189">
       <GraphicProperties Id="10012">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -190,12 +190,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,12.6504 0.13042,12.52 20.7363,0.65209 21.1276,0.52167 21.3884,0.39125 22.1709,0.13042 22.6926,0 25.1705,0.13042 26.2138,0.39125 26.4747,0.52167 26.8659,0.65209 27.3876,0.91292 28.8222,1.9563 28.9526,2.2171 34.5605,12.52 34.5605,12.6504 0,12.6504 0,12.6504</Points>
+            <Points>0,37.408 0.2453,37.2854 63.287,3.1889 63.1643,2.9436 63.0417,2.453 62.9191,2.085 62.4285,0.12265 62.4285,0 75.7972,0 75.9199,0.2453 76.0425,0.7359 76.1652,0.85854 76.6558,0.98119 77.3917,1.1038 136.3859,11.0384 137.1218,10.9158 137.2445,10.7931 151.4718,0 179.9264,0 179.8038,0 179.5585,0.2453 140.924,24.0392 140.556,24.1619 140.0654,24.2845 139.3295,24.4072 137.8577,24.2845 136.9992,24.1619 133.3197,23.5487 72.1177,13.2461 70.8913,13.8594 27.3508,37.408 0,37.408 0,37.408</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421212)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="14" Key="ca5dedf7-e28c-4a7c-ac9f-100000000013" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="73.1639" X="103.8771" Y="16.2369">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421212)" Height="37.408" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="14" Key="ca5dedf7-e28c-4a7c-ac9f-100000000013" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="23.3034" X="-25.3884" Y="-14.7792">
       <GraphicProperties Id="10013">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -205,12 +205,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,31.6913 0.26083,31.4305 43.8201,0 73.1639,0 73.0335,0 72.6423,0.39125 29.083,31.6913 0,31.6913 0,31.6913</Points>
+            <Points>0,0 13.4914,0.12265 13.982,2.085 23.3034,37.1627 23.3034,37.408 9.9346,37.408 9.8119,37.1627 9.5666,36.1815 0,0.12265 0,0 0,0</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421213)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="15" Key="ca5dedf7-e28c-4a7c-ac9f-100000000014" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="31.6913" X="116.9188" Y="-79.6196">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421213)" Height="15.6991" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="15" Key="ca5dedf7-e28c-4a7c-ac9f-100000000014" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="41.0875" X="75.3679" Y="-124.121">
       <GraphicProperties Id="10014">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -220,12 +220,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,0 15.5196,0.13042 16.6934,2.4779 31.6913,31.5609 31.6913,31.6913 16.1717,31.6913 14.7371,28.8222 0,0.13042 0,0 0,0</Points>
+            <Points>0,15.6991 0.2453,15.5765 26.1243,0.61325 26.4922,0.4906 26.7375,0.36795 27.4734,0.12265 27.964,0 30.2944,0.12265 31.2756,0.36795 31.5209,0.4906 31.8888,0.61325 32.3794,0.85854 33.7285,1.8397 33.8512,2.085 41.0875,15.5765 41.0875,15.6991 26.4922,15.5765 26.3696,15.4538 26.2469,15.5765 26.0016,15.6991 0,15.6991 0,15.6991</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421214)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="16" Key="ca5dedf7-e28c-4a7c-ac9f-100000000015" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="48.1239" X="135.5685" Y="-15.7152">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421214)" Height="37.408" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="16" Key="ca5dedf7-e28c-4a7c-ac9f-100000000015" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="33.7285" X="109.955" Y="-74.8774">
       <GraphicProperties Id="10015">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -235,12 +235,12 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,31.6913 0.26083,31.5609 28.0397,14.3459 28.1701,13.6938 28.3005,13.1721 28.5613,12.3896 28.4309,11.9984 26.6051,8.3467 22.3013,0 37.8209,0 38.473,1.3042 40.9509,5.9992 41.4726,6.1296 42.2551,6.3904 43.8201,7.1729 46.5589,9.5204 48.1239,12.2592 47.9935,19.9538 47.863,20.3451 47.211,21.6492 45.1243,24.1271 42.6464,25.6922 41.2118,26.2138 40.6901,26.3442 40.038,26.4747 38.8643,26.6051 36.5168,26.3442 36.1255,26.4747 35.8647,26.6051 29.2134,31.6913 0,31.6913 0,31.6913</Points>
+            <Points>0,0 14.5953,0.12265 15.3312,1.5944 33.7285,37.408 19.1333,37.408 18.1521,35.4456 0,0.12265 0,0 0,0</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
    </RegionItem>
-   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421215)" Height="31.6913" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="17" Key="ca5dedf7-e28c-4a7c-ac9f-100000000016" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="31.8217" X="133.2862" Y="-47.6674">
+   <RegionItem Color="#FFFF0000" GraphicProperties="PolygonGraphics (58421215)" Height="37.408" IconName="OverlayClosedPolyline" IsForAcquisition="true" IsForAnalysis="false" IsForBleach="false" IsProtected="false" IsVisible="true" ItemIndex="17" Key="ca5dedf7-e28c-4a7c-ac9f-100000000016" Name="Polygon Contour" RegionType="Polygonal" Rotation="0" Width="51.39" X="124.4276" Y="-14.7792">
       <GraphicProperties Id="10016">
          <Attributes>
             <Foreground>#FFFF0000</Foreground>
@@ -250,7 +250,7 @@
             <IsDisplayIdVisible>true</IsDisplayIdVisible>
          </Attributes>
          <Geometry>
-            <Points>0,0 15.65,0.13042 17.7367,4.3038 31.8217,31.6913 16.3021,31.6913 15.7805,30.648 0,0 0,0</Points>
+            <Points>0,37.408 0.2453,37.2854 32.502,17.2935 32.6247,16.6803 32.7473,16.1897 32.9926,15.4538 32.87,15.0859 31.1529,11.6517 25.1431,0 39.7383,0 39.9836,0.4906 44.6443,9.444 45.1349,9.5666 45.8708,9.8119 47.3426,10.5478 49.9182,12.7555 51.39,15.3312 51.2674,22.5675 51.1447,22.9354 50.5315,24.1619 48.5691,26.4922 46.2388,27.964 44.8896,28.4546 44.399,28.5773 43.7858,28.6999 42.6819,28.8226 40.4742,28.5773 40.1063,28.6999 39.861,28.8226 28.6999,37.408 0,37.408 0,37.408</Points>
          </Geometry>
          <AnimationType>None</AnimationType>
       </GraphicProperties>
