@@ -1,4 +1,4 @@
-function [polygons2,polyFull,polygons] = Mask2Regions(raw,pixlength,outputName,TarDir,finalRes,options)
+function [polygons2,polyFull,polygons] = Mask2Regions(raw,outputName,TarDir,finalRes,options)
 %Converts a binary image into a .Regions file and a .ovl file to be read by
 %the Zen application.
 
@@ -44,8 +44,8 @@ if iscell(polygons) ==1
 %scaling with pixlength
 polygons2 = polygons;
 for i = 1:size(polygons2,1)
-    polygons2{i,1}(:,1) = (finalRes(1,1)/xsize)*pixlength.*polygons2{i,1}(:,1);
-    polygons2{i,1}(:,2) = (finalRes(1,2)/ysize)*pixlength.*polygons2{i,1}(:,2);
+    polygons2{i,1}(:,1) = (finalRes(1,1)/xsize).*polygons2{i,1}(:,1);
+    polygons2{i,1}(:,2) = (finalRes(1,2)/ysize).*polygons2{i,1}(:,2);
 end
 
 %Convert into the coordinate system used by the microscope. Coordinate
@@ -53,19 +53,19 @@ end
 %of view.
 
 for i = 1:size(polygons2,1)
-    polygons2{i,1}(:,1) = ((polygons2{i,1}(:,1)-(finalRes(1,1)*pixlength/2))*(10^-6));
-    polygons2{i,1}(:,2) = ((polygons2{i,1}(:,2)-(finalRes(1,2)*pixlength/2))*(10^-6));
+    polygons2{i,1}(:,1) = ((polygons2{i,1}(:,1)-(finalRes(1,1)/2))*(10^-6));
+    polygons2{i,1}(:,2) = ((polygons2{i,1}(:,2)-(finalRes(1,2)/2))*(10^-6));
 end
 %% Option to convert single pixels to triangles or squares
 if options(2,1) == 1
     %to triangles
     for i = 1:size(polygons2,1)
         if size(polygons2{i,1},1) == 1
-            polygons2{i,1}(1,2) = polygons2{i,1}(1,2)+((pixlength*(10^-6))/2);
-            polygons2{i,1}(2,1) = polygons2{i,1}(1,1)+((pixlength*(10^-6))/2);
-            polygons2{i,1}(3,1) = polygons2{i,1}(1,1)-((pixlength*(10^-6))/2);
-            polygons2{i,1}(2,2) = polygons2{i,1}(1,2)-((pixlength*(10^-6)));
-            polygons2{i,1}(3,2) = polygons2{i,1}(1,2)-((pixlength*(10^-6)));
+            polygons2{i,1}(1,2) = polygons2{i,1}(1,2)+((.25*(10^-6))/2);
+            polygons2{i,1}(2,1) = polygons2{i,1}(1,1)+((.25*(10^-6))/2);
+            polygons2{i,1}(3,1) = polygons2{i,1}(1,1)-((.25*(10^-6))/2);
+            polygons2{i,1}(2,2) = polygons2{i,1}(1,2)-((.25*(10^-6)));
+            polygons2{i,1}(3,2) = polygons2{i,1}(1,2)-((.25*(10^-6)));
             
         end
     end
@@ -73,13 +73,13 @@ if options(2,1) == 1
 elseif options(5,1) == 1
     for i = 1:size(polygons2,1)
         if size(polygons2{i,1},1) == 1
-            polygons2{i,1}(1,2) = polygons2{i,1}(1,2)+((pixlength*(10^-6))/2);
-            polygons2{i,1}(2,1) = polygons2{i,1}(1,1)+((pixlength*(10^-6))/2);
-            polygons2{i,1}(3,1) = polygons2{i,1}(1,1)-((pixlength*(10^-6))/2);
-            polygons2{i,1}(2,2) = polygons2{i,1}(1,2)-((pixlength*(10^-6)));
-            polygons2{i,1}(3,2) = polygons2{i,1}(1,2)-((pixlength*(10^-6)));
-            polygons2{i,1}(1,1) = polygons2{i,1}(1,1)+((pixlength*(10^-6))/2);
-            polygons2{i,1}(4,1) = polygons2{i,1}(1,1)-((pixlength*(10^-6)));
+            polygons2{i,1}(1,2) = polygons2{i,1}(1,2)+((.25*(10^-6))/2);
+            polygons2{i,1}(2,1) = polygons2{i,1}(1,1)+((.25*(10^-6))/2);
+            polygons2{i,1}(3,1) = polygons2{i,1}(1,1)-((.25*(10^-6))/2);
+            polygons2{i,1}(2,2) = polygons2{i,1}(1,2)-((.25*(10^-6)));
+            polygons2{i,1}(3,2) = polygons2{i,1}(1,2)-((.25*(10^-6)));
+            polygons2{i,1}(1,1) = polygons2{i,1}(1,1)+((.25*(10^-6))/2);
+            polygons2{i,1}(4,1) = polygons2{i,1}(1,1)-((.25*(10^-6)));
             polygons2{i,1}(4,2) = polygons2{i,1}(1,2);
             
         end
@@ -93,28 +93,28 @@ for i = 1:size(polygons2,1)
         tempPoly(1) = min(polygons2{i,1}(:,2));
         tempPoly(2) = max(polygons2{i,1}(:,2));
         tempPoly(3) = polygons2{i,1}(1,1);
-        polygons2{i,1}(1,1) = tempPoly(3)+((pixlength*(10^-6))/2);
-        polygons2{i,1}(2,1) = tempPoly(3)+((pixlength*(10^-6))/2);
-        polygons2{i,1}(3,1) = tempPoly(3)-((pixlength*(10^-6))/2);
-        polygons2{i,1}(4,1) = tempPoly(3)-((pixlength*(10^-6))/2);
-        polygons2{i,1}(1,2) = tempPoly(1)-((pixlength*(10^-6))/2);
-        polygons2{i,1}(2,2) = tempPoly(2)+((pixlength*(10^-6))/2);
-        polygons2{i,1}(3,2) = tempPoly(2)+((pixlength*(10^-6))/2);
-        polygons2{i,1}(4,2) = tempPoly(1)-((pixlength*(10^-6))/2);
+        polygons2{i,1}(1,1) = tempPoly(3)+((.25*(10^-6))/2);
+        polygons2{i,1}(2,1) = tempPoly(3)+((.25*(10^-6))/2);
+        polygons2{i,1}(3,1) = tempPoly(3)-((.25*(10^-6))/2);
+        polygons2{i,1}(4,1) = tempPoly(3)-((.25*(10^-6))/2);
+        polygons2{i,1}(1,2) = tempPoly(1)-((.25*(10^-6))/2);
+        polygons2{i,1}(2,2) = tempPoly(2)+((.25*(10^-6))/2);
+        polygons2{i,1}(3,2) = tempPoly(2)+((.25*(10^-6))/2);
+        polygons2{i,1}(4,2) = tempPoly(1)-((.25*(10^-6))/2);
     end
     if size(unique(polygons2{i,1}(:,2)),1)==1
                 clear tempPoly
         tempPoly(1) = min(polygons2{i,1}(:,1));
         tempPoly(2) = max(polygons2{i,1}(:,1));
         tempPoly(3) = polygons2{i,1}(1,2);
-        polygons2{i,1}(1,2) = tempPoly(3)+((pixlength*(10^-6))/2);
-        polygons2{i,1}(2,2) = tempPoly(3)+((pixlength*(10^-6))/2);
-        polygons2{i,1}(3,2) = tempPoly(3)-((pixlength*(10^-6))/2);
-        polygons2{i,1}(4,2) = tempPoly(3)-((pixlength*(10^-6))/2);
-        polygons2{i,1}(1,1) = tempPoly(1)-((pixlength*(10^-6))/2);
-        polygons2{i,1}(2,1) = tempPoly(2)+((pixlength*(10^-6))/2);
-        polygons2{i,1}(3,1) = tempPoly(2)+((pixlength*(10^-6))/2);
-        polygons2{i,1}(4,1) = tempPoly(1)-((pixlength*(10^-6))/2);
+        polygons2{i,1}(1,2) = tempPoly(3)+((.25*(10^-6))/2);
+        polygons2{i,1}(2,2) = tempPoly(3)+((.25*(10^-6))/2);
+        polygons2{i,1}(3,2) = tempPoly(3)-((.25*(10^-6))/2);
+        polygons2{i,1}(4,2) = tempPoly(3)-((.25*(10^-6))/2);
+        polygons2{i,1}(1,1) = tempPoly(1)-((.25*(10^-6))/2);
+        polygons2{i,1}(2,1) = tempPoly(2)+((.25*(10^-6))/2);
+        polygons2{i,1}(3,1) = tempPoly(2)+((.25*(10^-6))/2);
+        polygons2{i,1}(4,1) = tempPoly(1)-((.25*(10^-6))/2);
     end
 end
 
@@ -137,7 +137,7 @@ end
 %% View all polylines in Zen Frame of Reference
 hFigS = subplot(1,2,2);
 set(hFigS,'Position',[.55 .1 .4 .8]);
-axis([-finalRes(1,1)/2*pixlength, finalRes(1,1)/2*pixlength, -finalRes(1,1)/2*pixlength, finalRes(1,1)/2*pixlength]);
+axis([-finalRes(1,1)/2, finalRes(1,1)/2, -finalRes(1,1)/2, finalRes(1,1)/2]);
 xlabel('Microns')
 ylabel('Microns')
 hold on
@@ -160,8 +160,8 @@ yMax = max(ymax);
 xwidth = (xMax-xMin) *10^6;
 ywidth = (yMax-yMin) *10^6;
 
-text(-finalRes(1,1)/2*pixlength+5,-finalRes(1,2)/2*pixlength+25,['Width: ',num2str(xwidth)])
-text(-finalRes(1,1)/2*pixlength+5,-finalRes(1,2)/2*pixlength+10,['Height: ',num2str(ywidth)])
+text(-finalRes(1,1)/2+5,-finalRes(1,2)/2+25,['Width: ',num2str(xwidth)])
+text(-finalRes(1,1)/2+5,-finalRes(1,2)/2+10,['Height: ',num2str(ywidth)])
 end
 else
    polygons2{1,1}(1:4,1:2) = 0; 

@@ -22,9 +22,14 @@ prefix = parts{end}; %Sets the output name prefix
 
 %%
 % Zen Application frame parameters for scaling images and regions
-pixelsize = input('What is the pixel size in microns?');
-finalRes(1,1) = input('What is the final X resolution in pixels (desired frame size in ZEN)?');
-finalRes(1,2) = input('What is the final Y resolution in pixels (desired frame size in ZEN)?');
+% pixelsize = input('What is the pixel size in microns?');
+% finalRes(1,1) = input('What is the final X resolution in pixels (desired frame size in ZEN)?');
+% finalRes(1,2) = input('What is the final Y resolution in pixels (desired frame size in ZEN)?');
+% tic
+
+
+finalRes(1,1) = input('In microns, how WIDE (X-dimension) would you like your image to be printed?');
+finalRes(1,2) = input('In microns, how TALL (Y-dimension) would you like your image to be printed?');
 tic
 
 %% Run the options selection window
@@ -38,7 +43,7 @@ for i = 1:size(images,3)
     a=images(:,:,i);
     b=a>0;
     options(8,1) = i;
-    [poly1,poly2,poly3] = Mask2Regions(b,pixelsize,outputName,TarPath,finalRes,options);
+    [poly1,poly2,poly3] = Mask2Regions(b,outputName,TarPath,finalRes,options);
 end
 else
     i=1;
@@ -47,9 +52,9 @@ else
     b=a>0;
     options(8,1) = i;
     if options(9,1) == 0
-    [poly1,poly2,poly3] = Mask2Regions(b,pixelsize,outputName,TarPath,finalRes,options);   
+    [poly1,poly2,poly3] = Mask2Regions(b,outputName,TarPath,finalRes,options);   
     else
-        [poly1,poly3] = Mask2RegionsAlt(b,pixelsize,outputName,TarPath,finalRes,options);   
+        [poly1,poly3] = Mask2RegionsAlt(b,outputName,TarPath,finalRes,options);   
     end
 end
 disp('Done!')
