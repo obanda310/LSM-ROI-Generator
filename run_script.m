@@ -38,13 +38,13 @@ options = ROIGenOpt();
 
 %% Iterative .Regions and .ovl outputs
 if options(6,1) == 0
-for i = 1:size(images,3)
-    outputName = [prefix '_' num2str(i)];
-    a=images(:,:,i);
-    b=a>0;
-    options(8,1) = i;
-    [poly1,poly2,poly3] = Mask2Regions(b,outputName,TarPath,finalRes,options);
-end
+    for i = 1:size(images,3)
+        outputName = [prefix '_' num2str(i)];
+        a=images(:,:,i);
+        b=a>0;
+        options(8,1) = i;
+        [poly1,poly2,poly3] = Mask2Regions(b,outputName,TarPath,finalRes,options);
+    end
 else
     i=1;
     outputName = [prefix '_' num2str(i)];
@@ -52,9 +52,9 @@ else
     b=a>0;
     options(8,1) = i;
     if options(9,1) == 0
-    [poly1,poly2,poly3] = Mask2Regions(b,outputName,TarPath,finalRes,options);   
+        [poly1,poly2,poly3] = Mask2Regions(b,outputName,TarPath,finalRes,options);
     else
-        [poly1,poly3] = Mask2RegionsAlt(b,outputName,TarPath,finalRes,options);   
+        [poly1,poly3] = Mask2RegionsAlt(b,outputName,TarPath,finalRes,options);
     end
 end
 disp('Done!')

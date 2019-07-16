@@ -48,19 +48,19 @@ h.c(6) = uicontrol('style','checkbox','units','pixels',...
 %Reduce the number of rendered outputs for assessing quality. (Useful for
 %large images stacks with more than ~20 images in the stack)
 h.c(7) = uicontrol('style','checkbox','units','pixels',...
-     'position',[10,H-155,W-40,15],'string','Show Fewer Outputs (Useful for Large Stacks)','Value',1);
- 
+    'position',[10,H-155,W-40,15],'string','Show Fewer Outputs (Useful for Large Stacks)','Value',1);
+
 mTextBox = uicontrol('style','text','position',[10,H-175,200,15],'HorizontalAlignment','Left','fontweight','bold');
 set(mTextBox,'String','Other Options:');
- 
+
 %placeholder
 h.c(8) = uicontrol('style','checkbox','units','pixels',...
-     'position',[10,H-(2*H),W,15],'string','Use Full Borders (***Will Create Complicated ROIs***)','Value',0);
- 
- 
+    'position',[10,H-(2*H),W,15],'string','Use Full Borders (***Will Create Complicated ROIs***)','Value',0);
+
+
 %Use full pixel trace (no shortcuts on any corners)
 h.c(9) = uicontrol('style','checkbox','units','pixels',...
-     'position',[10,H-195,W,15],'string','Use Full Borders (***Will Create Complicated ROIs***)','Value',0);
+    'position',[10,H-195,W,15],'string','Use Full Borders (***Will Create Complicated ROIs***)','Value',0);
 
 options = zeros(9,1);
 

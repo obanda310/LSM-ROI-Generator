@@ -25,7 +25,7 @@ raw = rawN2==0;
 
 %% Remove isolated features up to 10pixels area.
 if options(1,1) == 1
-raw = bwareaopen(raw, 10, 4);
+    raw = bwareaopen(raw, 10, 4);
 end
 
 %% Open closed regions
@@ -49,13 +49,13 @@ if options(4,1) == 1
     
     for i =1:2:div
         if i == div
-        DivMask1(IMdiv*(i-1):IMsize,:) = 0;
+            DivMask1(IMdiv*(i-1):IMsize,:) = 0;
         elseif i == 1
-        DivMask1(1:IMdiv*i,:) = 0;
+            DivMask1(1:IMdiv*i,:) = 0;
         else
-        DivMask1(IMdiv*(i-1):IMdiv*i,:) = 0;
-        D(IMdiv*i+1,:) = 1;
-        D(IMdiv*i+3,:) = 1;
+            DivMask1(IMdiv*(i-1):IMdiv*i,:) = 0;
+            D(IMdiv*i+1,:) = 1;
+            D(IMdiv*i+3,:) = 1;
         end
     end
     
@@ -63,10 +63,10 @@ if options(4,1) == 1
         if i == div
             DivMask2(IMdiv*(i-1)+round(IMdiv/4):IMsize,:) = 0;
         else
-        DivMask2(IMdiv*(i-1)+round(IMdiv/8):IMdiv*i-round(IMdiv/8),:) = 0;
-        %A(:,IMdiv*i) = 0;
-        D(IMdiv*i+1,:) = 1;
-        D(IMdiv*i+3,:) = 1;
+            DivMask2(IMdiv*(i-1)+round(IMdiv/8):IMdiv*i-round(IMdiv/8),:) = 0;
+            %A(:,IMdiv*i) = 0;
+            D(IMdiv*i+1,:) = 1;
+            D(IMdiv*i+3,:) = 1;
         end
     end
     DivMaskFinal = DivMask1.*DivMask2;
@@ -86,7 +86,7 @@ end
 % IMsize = ysize;
 % IMdiv = round(IMsize/div);
 % DivMask= ones(ysize,xsize);
-% 
+%
 % Dz= zeros(ysize,xsize);
 % D = Dz;
 % % The image 'D' will contain only the edges created by dividing the raw
@@ -96,7 +96,7 @@ end
 %     DivMask(IMdiv*i,:) = 0;
 %     %A(:,IMdiv*i) = 0;
 %     D(IMdiv*i-1,:) = 1;
-%     D(IMdiv*i+1,:) = 1;    
+%     D(IMdiv*i+1,:) = 1;
 % end
 % end
 
@@ -106,105 +106,105 @@ end
 
 %% Update 'raw'
 if options(4,1) == 1
-IM2a = (raw.*DivMask1);
-IM2b = (raw.*DivMask2);
-polya = bwboundaries(IM2a,8);
-polyb = bwboundaries(IM2b,8);
-%Update 'raw' image by convolution with DivMask
-poly1 = cat(1,polya,polyb);
+    IM2a = (raw.*DivMask1);
+    IM2b = (raw.*DivMask2);
+    polya = bwboundaries(IM2a,8);
+    polyb = bwboundaries(IM2b,8);
+    %Update 'raw' image by convolution with DivMask
+    poly1 = cat(1,polya,polyb);
 else
-IM2 = (raw); 
-poly1 = bwboundaries(IM2,8); %Find boundaries to start building polygons
+    IM2 = (raw);
+    poly1 = bwboundaries(IM2,8); %Find boundaries to start building polygons
 end
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%VERSION 2 Start%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Version 2 used a method where the user had the option to scale down the
 % image to generate a simplified mask and therefore simpler regions. It may
 % still have use, but is currently not used.
 if options(3,1) ==1
-% %%Identify 'corners' in a simplified image
-points = detectHarrisFeatures(imresize(raw,[ysize*LSS xsize*LSS]));
-points2 = points;
-points2.Location = round(points.Location/LSS);
-
-% %% Find corners created by dividing the image
-IM3 = IM2.*D; %Get synthetic edges in 'raw'
-D2 = Dz;
-%Mark in D2 anything that doesn't look like the end of a line in IM3
-for i =1:div-1
-    for j = 2:xsize-1
-        if IM3(IMdiv*i-1,j-1)==1 && IM3(IMdiv*i-1,j+1)==1
-            D2(IMdiv*i-1,j)=1;
-        end
-        if IM3(IMdiv*i+1,j-1)==1 && IM3(IMdiv*i+1,j+1)==1
-            D2(IMdiv*i+1,j)=1;
-        end
-    end
-end
-
-% %% Create an image of the outlines
-D5 = Dz;
-for i = 1:size(poly1,1)
-    thisbound = poly1{i,1};
-    for j = 1:size(thisbound,1)
-        D5(thisbound(j,1),thisbound(j,2)) = 1;
-    end
-end
-
-% %% Create an image of the outlines minus synthetic edges
-D6 = D5.*(IM3==0);
-% figure
-% imshow(D6)
-
-% %% For each 'corner' found in the simplied image (i.e. corners in
-% points2), identify a corresponding pixel in the outlines in 'D6' and
-% record that pixel in 'ptsFinal'
-[idxY,idxX] = find(D6);
-for i = 1:size(points2.Location,1)
-    clear idxD
-    idxD = (idxX-points2.Location(i,1)).^2+(idxY-points2.Location(i,2)).^2;
-    idxM = find(idxD == min(idxD),1,'first');
-    ptsFinal(i,2)=idxX(idxM);
-    ptsFinal(i,1)=idxY(idxM);
+    % %%Identify 'corners' in a simplified image
+    points = detectHarrisFeatures(imresize(raw,[ysize*LSS xsize*LSS]));
+    points2 = points;
+    points2.Location = round(points.Location/LSS);
     
-end
-
-% %% For each point in ptsFinal, identify the corresponding point in poly1
-for j = 1:size(poly1,1)
-    ptsInt = intersect(poly1{j,1}(:,1:2),ptsFinal,'rows');
-    for i = 1:size(ptsInt,1)
-        [~,idx] = ismember(ptsInt(i,1:2),poly1{j,1}(:,1:2),'rows');
-        poly1{j,1}(idx(1,1),3) = 1;
+    % %% Find corners created by dividing the image
+    IM3 = IM2.*D; %Get synthetic edges in 'raw'
+    D2 = Dz;
+    %Mark in D2 anything that doesn't look like the end of a line in IM3
+    for i =1:div-1
+        for j = 2:xsize-1
+            if IM3(IMdiv*i-1,j-1)==1 && IM3(IMdiv*i-1,j+1)==1
+                D2(IMdiv*i-1,j)=1;
+            end
+            if IM3(IMdiv*i+1,j-1)==1 && IM3(IMdiv*i+1,j+1)==1
+                D2(IMdiv*i+1,j)=1;
+            end
+        end
     end
-end
-
-% %% Collect corners caused by dividing the image
-% Identify locations in image correspond to corners
-IM4 = IM3.*(D2==0);
-[corners(:,1),corners(:,2)] = find(IM4);
-% figure
-% imshow(IM4,[])
-
-% Identify which pixels in poly1 correspond to corners
-for j = 1:size(poly1,1)
-    ptsInt = intersect(poly1{j,1}(:,1:2),corners,'rows');
-    for i = 1:size(ptsInt,1)
-        [~,idx] = ismember(ptsInt(i,1:2),poly1{j,1}(:,1:2),'rows');
-        poly1{j,1}(idx(1,1),3) = 1;
+    
+    % %% Create an image of the outlines
+    D5 = Dz;
+    for i = 1:size(poly1,1)
+        thisbound = poly1{i,1};
+        for j = 1:size(thisbound,1)
+            D5(thisbound(j,1),thisbound(j,2)) = 1;
+        end
     end
-end
-
-% %% Keep only identified features in 'poly1' outlines.
-for i = 1:size(poly1,1)
-    try
-        idx = find(poly1{i,1}(:,3));
-        poly2{i,1} = poly1{i,1}(idx,1:2);
+    
+    % %% Create an image of the outlines minus synthetic edges
+    D6 = D5.*(IM3==0);
+    % figure
+    % imshow(D6)
+    
+    % %% For each 'corner' found in the simplied image (i.e. corners in
+    % points2), identify a corresponding pixel in the outlines in 'D6' and
+    % record that pixel in 'ptsFinal'
+    [idxY,idxX] = find(D6);
+    for i = 1:size(points2.Location,1)
+        clear idxD
+        idxD = (idxX-points2.Location(i,1)).^2+(idxY-points2.Location(i,2)).^2;
+        idxM = find(idxD == min(idxD),1,'first');
+        ptsFinal(i,2)=idxX(idxM);
+        ptsFinal(i,1)=idxY(idxM);
+        
     end
-end
-
-% %% Begin converting data into format for creating .Regions file
-for i = 1:size(poly2,1)
-    spoly2(i,1) = size(poly2{i,1},1);
-end
+    
+    % %% For each point in ptsFinal, identify the corresponding point in poly1
+    for j = 1:size(poly1,1)
+        ptsInt = intersect(poly1{j,1}(:,1:2),ptsFinal,'rows');
+        for i = 1:size(ptsInt,1)
+            [~,idx] = ismember(ptsInt(i,1:2),poly1{j,1}(:,1:2),'rows');
+            poly1{j,1}(idx(1,1),3) = 1;
+        end
+    end
+    
+    % %% Collect corners caused by dividing the image
+    % Identify locations in image correspond to corners
+    IM4 = IM3.*(D2==0);
+    [corners(:,1),corners(:,2)] = find(IM4);
+    % figure
+    % imshow(IM4,[])
+    
+    % Identify which pixels in poly1 correspond to corners
+    for j = 1:size(poly1,1)
+        ptsInt = intersect(poly1{j,1}(:,1:2),corners,'rows');
+        for i = 1:size(ptsInt,1)
+            [~,idx] = ismember(ptsInt(i,1:2),poly1{j,1}(:,1:2),'rows');
+            poly1{j,1}(idx(1,1),3) = 1;
+        end
+    end
+    
+    % %% Keep only identified features in 'poly1' outlines.
+    for i = 1:size(poly1,1)
+        try
+            idx = find(poly1{i,1}(:,3));
+            poly2{i,1} = poly1{i,1}(idx,1:2);
+        end
+    end
+    
+    % %% Begin converting data into format for creating .Regions file
+    for i = 1:size(poly2,1)
+        spoly2(i,1) = size(poly2{i,1},1);
+    end
 else
     poly2 = 'Change the option to run Mask2Poly version 2 if you want this output';
     corners = [0,0];
@@ -299,10 +299,10 @@ end
 %% Calculate total number of vertices
 %if no regions, skip this
 try
-for i = 1:size(poly3,1)
-    elemsizes(i,1) = size(poly3{i,1},1);
-end
-numVertices = sum(elemsizes,1);
+    for i = 1:size(poly3,1)
+        elemsizes(i,1) = size(poly3{i,1},1);
+    end
+    numVertices = sum(elemsizes,1);
 catch
     numVertices = 0;
     poly1 = 0;

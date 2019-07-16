@@ -42,7 +42,7 @@ for i = 1:size(polyVerts,1)
     fwrite(fid,Rtext(80:90,1),'uint8');
     fwrite(fid,num2str(polyStats.Height(i)),'uint8');
     fwrite(fid,Rtext(93:241,1),'uint8');
-    fwrite(fid,num2str(i),'uint8');    
+    fwrite(fid,num2str(i),'uint8');
     fwrite(fid,Rtext(243:273,1),'uint8');
     fwrite(fid,num2str(KEYID),'uint8');
     KEYID = KEYID + 1;
@@ -61,7 +61,7 @@ for i = 1:size(polyVerts,1)
         fwrite(fid,',','uint8');
         fwrite(fid,num2str(polyVerts{i,1}(j,2)),'uint8');
         fwrite(fid,32,'uint8');
-    end    
+    end
     fwrite(fid,num2str(polyVerts{i,1}(j,1)),'uint8');
     fwrite(fid,',','uint8');
     fwrite(fid,num2str(polyVerts{i,1}(j,2)),'uint8');
