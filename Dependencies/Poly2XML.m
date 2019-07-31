@@ -1,24 +1,28 @@
 function output = Poly2XML(filnm4,polyVerts,polyStats)
-%%
-czStart = 'czstart.txt';
-czRegion = 'czregion.txt';
-czEnd = 'czend.txt';
+%% For Generating Mat File
+% czStart = 'czstart.txt';
+% czRegion = 'czregion.txt';
+% czEnd = 'czend.txt';
+% 
+% %% Open Template files
+% %Document Start
+% S=fopen(czStart);
+% Stext = fread(S,'uint8');
+% fclose(S);
+% 
+% %RegionItem Nodes (will need one for each region)
+% R=fopen(czRegion);
+% Rtext = fread(R,'uint8');
+% fclose(R);
+% 
+% %Document Close
+% E=fopen(czEnd);
+% Etext = fread(E,'uint8');
+% fclose(E);
+% save('RegionParts.mat','Stext','Rtext','Etext')
+%% Load the parts
+load('RegionParts.mat')
 
-%% Open Template files
-%Document Start
-S=fopen(czStart);
-Stext = fread(S,'uint8');
-fclose(S);
-
-%RegionItem Nodes (will need one for each region)
-R=fopen(czRegion);
-Rtext = fread(R,'uint8');
-fclose(R);
-
-%Document Close
-E=fopen(czEnd);
-Etext = fread(E,'uint8');
-fclose(E);
 %%
 %Start new file
 fid=fopen(filnm4,'w');
