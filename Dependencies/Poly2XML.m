@@ -1,8 +1,8 @@
 function output = Poly2XML(filnm4,polyVerts,polyStats)
 %%
-czStart = 'czstart.czexr';
-czRegion = 'czregion.czexr';
-czEnd = 'czend.czexr';
+czStart = 'czstart.txt';
+czRegion = 'czregion.txt';
+czEnd = 'czend.txt';
 
 %% Open Template files
 %Document Start
